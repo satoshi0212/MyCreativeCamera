@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E7173BD2AA1F8D300223341 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7173BC2AA1F8D300223341 /* Defaults */; };
+		8E7173C02AA1F8F300223341 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7173BF2AA1F8F300223341 /* Defaults */; };
+		8E7173C22AA1F9FA00223341 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C12AA1F9FA00223341 /* Constants.swift */; };
+		8E7173C32AA1F9FA00223341 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C12AA1F9FA00223341 /* Constants.swift */; };
+		8E7173C52AA1FA6F00223341 /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */; };
+		8E7173C62AA1FA6F00223341 /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */; };
 		8EDF85252AA1BEFD00334D6E /* MyCreativeCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85242AA1BEFD00334D6E /* MyCreativeCameraApp.swift */; };
 		8EDF85272AA1BEFD00334D6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85262AA1BEFD00334D6E /* ContentView.swift */; };
 		8EDF85292AA1BEFF00334D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDF85282AA1BEFF00334D6E /* Assets.xcassets */; };
@@ -43,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8E7173C12AA1F9FA00223341 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Keys.swift"; sourceTree = "<group>"; };
 		8EDF85212AA1BEFD00334D6E /* MyCreativeCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCreativeCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDF85242AA1BEFD00334D6E /* MyCreativeCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCreativeCameraApp.swift; sourceTree = "<group>"; };
 		8EDF85262AA1BEFD00334D6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7173BD2AA1F8D300223341 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,19 +78,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7173C02AA1F8F300223341 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E7173BE2AA1F8F300223341 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8EDF85182AA1BEFD00334D6E = {
 			isa = PBXGroup;
 			children = (
+				8E7173C12AA1F9FA00223341 /* Constants.swift */,
+				8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */,
 				8EDF856A2AA1EA8300334D6E /* Utility.swift */,
 				8EDF85232AA1BEFD00334D6E /* MyCreativeCamera */,
 				8EDF855D2AA1C7EE00334D6E /* Extension */,
 				8EDF85222AA1BEFD00334D6E /* Products */,
+				8E7173BE2AA1F8F300223341 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +163,9 @@
 				8EDF85652AA1C7EE00334D6E /* PBXTargetDependency */,
 			);
 			name = MyCreativeCamera;
+			packageProductDependencies = (
+				8E7173BC2AA1F8D300223341 /* Defaults */,
+			);
 			productName = MyCreativeCamera;
 			productReference = 8EDF85212AA1BEFD00334D6E /* MyCreativeCamera.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +183,9 @@
 			dependencies = (
 			);
 			name = Extension;
+			packageProductDependencies = (
+				8E7173BF2AA1F8F300223341 /* Defaults */,
+			);
 			productName = Extension;
 			productReference = 8EDF855C2AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension */;
 			productType = "com.apple.product-type.system-extension";
@@ -191,6 +217,9 @@
 				Base,
 			);
 			mainGroup = 8EDF85182AA1BEFD00334D6E;
+			packageReferences = (
+				8E7173BB2AA1F8D300223341 /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = 8EDF85222AA1BEFD00334D6E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,8 +255,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EDF85272AA1BEFD00334D6E /* ContentView.swift in Sources */,
+				8E7173C52AA1FA6F00223341 /* Defaults+Keys.swift in Sources */,
 				8EDF85252AA1BEFD00334D6E /* MyCreativeCameraApp.swift in Sources */,
 				8EDF856B2AA1EA8300334D6E /* Utility.swift in Sources */,
+				8E7173C22AA1F9FA00223341 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,8 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EDF85612AA1C7EE00334D6E /* main.swift in Sources */,
+				8E7173C62AA1FA6F00223341 /* Defaults+Keys.swift in Sources */,
 				8EDF855F2AA1C7EE00334D6E /* ExtensionProvider.swift in Sources */,
 				8EDF856C2AA1EA8300334D6E /* Utility.swift in Sources */,
+				8E7173C32AA1F9FA00223341 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +548,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E7173BB2AA1F8D300223341 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E7173BC2AA1F8D300223341 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E7173BB2AA1F8D300223341 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		8E7173BF2AA1F8F300223341 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E7173BB2AA1F8D300223341 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8EDF85192AA1BEFD00334D6E /* Project object */;
 }

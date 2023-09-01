@@ -5,6 +5,7 @@ import os.log
 import AVFoundation
 import CoreImage
 import CoreImage.CIFilterBuiltins
+import Defaults
 
 let kFrameRate: Int = 60
 
@@ -21,6 +22,8 @@ class ExtensionDeviceSource: NSObject, CMIOExtensionDeviceSource {
     private let ciContext = CIContext()
     private let filterComposite = CIFilter(name: "CISourceOverCompositing")
     private var textImage: CIImage?
+
+    private var isBypass: Bool = false
 
     let input: AVCaptureDeviceInput = {
         let device = AVCaptureDevice.DiscoverySession.faceTimeDevice()
@@ -70,6 +73,8 @@ class ExtensionDeviceSource: NSObject, CMIOExtensionDeviceSource {
 		} catch let error {
 			fatalError("Failed to add stream: \(error.localizedDescription)")
 		}
+
+        observeSettings()
 	}
 	
 	var availableProperties: Set<CMIOExtensionProperty> {
@@ -96,12 +101,25 @@ class ExtensionDeviceSource: NSObject, CMIOExtensionDeviceSource {
 	}
 	
     func startStreaming() {
-        textImage = Utility.generate(text: "Hello 仮想カメラ！")
         session.startRunning()
     }
 
     func stopStreaming() {
         session.stopRunning()
+    }
+
+    private func observeSettings() {
+        Task {
+            for await isBypass in Defaults.updates(.isBypass) {
+                self.isBypass = isBypass
+            }
+        }
+
+        Task {
+            for await message in Defaults.updates(.message) {
+                textImage = Utility.generate(text: message)
+            }
+        }
     }
 }
 
@@ -244,6 +262,11 @@ class ExtensionProviderSource: NSObject, CMIOExtensionProviderSource {
 extension ExtensionDeviceSource: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        if isBypass {
+            _streamSource.stream.send(sampleBuffer, discontinuity: .time, hostTimeInNanoseconds: 0)
+            return
+        }
+
         let inputImage = CIImage(cvImageBuffer: sampleBuffer.imageBuffer!)
 
         if let compositedImage = compose(bgImage: inputImage, overlayImage: textImage) {

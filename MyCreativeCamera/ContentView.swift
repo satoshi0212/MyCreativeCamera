@@ -1,26 +1,37 @@
 import SwiftUI
 import SystemExtensions
+import Defaults
 
 struct ContentView: View {
-    
-    let extentionID: String = "tokyo.shmdevelopment.MyCreativeCamera.Extension"
+
+    @Default(.message) var message
 
     var body: some View {
-        HStack {
-            Button {
-                let activationRequest = OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: extentionID, queue: .main)
-                OSSystemExtensionManager.shared.submitRequest(activationRequest)
-            } label: {
-                Text("Install")
+        VStack {
+            HStack {
+                Button {
+                    let activationRequest = OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: extensionID, queue: .main)
+                    OSSystemExtensionManager.shared.submitRequest(activationRequest)
+                } label: {
+                    Text("Install")
+                }
+                Button {
+                    let deactivationRequest = OSSystemExtensionRequest.deactivationRequest(forExtensionWithIdentifier: extensionID, queue: .main)
+                    OSSystemExtensionManager.shared.submitRequest(deactivationRequest)
+                } label: {
+                    Text("Uninstall")
+                }
+                Defaults.Toggle("Bypass", key: .isBypass)
             }
-            Button {
-                let deactivationRequest = OSSystemExtensionRequest.deactivationRequest(forExtensionWithIdentifier: extentionID, queue: .main)
-                OSSystemExtensionManager.shared.submitRequest(deactivationRequest)
-            } label: {
-                Text("Uninstall")
+            .padding()
+
+            HStack {
+                TextEditor(text: $message)
+                    .font(.system(size: 16))
+                    .border(Color.gray, width: 1)
             }
+            .padding()
         }
-        .padding()
     }
 }
 
