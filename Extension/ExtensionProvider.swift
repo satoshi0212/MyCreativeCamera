@@ -19,6 +19,8 @@ class ExtensionDeviceSource: NSObject, CMIOExtensionDeviceSource {
 	private var _bufferAuxAttributes: NSDictionary!
 
     private let ciContext = CIContext()
+    private let filterComposite = CIFilter(name: "CISourceOverCompositing")
+    private var textImage: CIImage?
 
     let input: AVCaptureDeviceInput = {
         let device = AVCaptureDevice.DiscoverySession.faceTimeDevice()
@@ -94,6 +96,7 @@ class ExtensionDeviceSource: NSObject, CMIOExtensionDeviceSource {
 	}
 	
     func startStreaming() {
+        textImage = Utility.generate(text: "Hello 仮想カメラ！")
         session.startRunning()
     }
 
@@ -243,10 +246,8 @@ extension ExtensionDeviceSource: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let inputImage = CIImage(cvImageBuffer: sampleBuffer.imageBuffer!)
 
-        let filter = CIFilter.sepiaTone()
-        filter.inputImage = inputImage
-        if let outputImage = filter.outputImage {
-            ciContext.render(outputImage, to: sampleBuffer.imageBuffer!)
+        if let compositedImage = compose(bgImage: inputImage, overlayImage: textImage) {
+            ciContext.render(compositedImage, to: sampleBuffer.imageBuffer!)
         }
 
         _streamSource.stream.send(sampleBuffer, discontinuity: .time, hostTimeInNanoseconds: 0)
@@ -255,10 +256,20 @@ extension ExtensionDeviceSource: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         _streamSource.stream.send(sampleBuffer, discontinuity: .sampleDropped, hostTimeInNanoseconds: 0)
     }
+
+    private func compose(bgImage: CIImage, overlayImage: CIImage?) -> CIImage? {
+        guard let filterComposite = filterComposite, let overlayImage = overlayImage else {
+            return bgImage
+        }
+        filterComposite.setValue(overlayImage, forKeyPath: kCIInputImageKey)
+        filterComposite.setValue(bgImage, forKeyPath: kCIInputBackgroundImageKey)
+        return filterComposite.outputImage
+    }
 }
 
 extension AVCaptureDevice.DiscoverySession {
-    public static func faceTimeDevice() -> AVCaptureDevice {
+
+    static func faceTimeDevice() -> AVCaptureDevice {
         let discoverySession = AVCaptureDevice.DiscoverySession(
             deviceTypes: [.builtInWideAngleCamera],
             mediaType: .video,

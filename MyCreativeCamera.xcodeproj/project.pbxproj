@@ -14,6 +14,8 @@
 		8EDF855F2AA1C7EE00334D6E /* ExtensionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF855E2AA1C7EE00334D6E /* ExtensionProvider.swift */; };
 		8EDF85612AA1C7EE00334D6E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85602AA1C7EE00334D6E /* main.swift */; };
 		8EDF85662AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 8EDF855C2AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8EDF856B2AA1EA8300334D6E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF856A2AA1EA8300334D6E /* Utility.swift */; };
+		8EDF856C2AA1EA8300334D6E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF856A2AA1EA8300334D6E /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		8EDF85602AA1C7EE00334D6E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8EDF85622AA1C7EE00334D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EDF85632AA1C7EE00334D6E /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
+		8EDF856A2AA1EA8300334D6E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 		8EDF85182AA1BEFD00334D6E = {
 			isa = PBXGroup;
 			children = (
+				8EDF856A2AA1EA8300334D6E /* Utility.swift */,
 				8EDF85232AA1BEFD00334D6E /* MyCreativeCamera */,
 				8EDF855D2AA1C7EE00334D6E /* Extension */,
 				8EDF85222AA1BEFD00334D6E /* Products */,
@@ -223,6 +227,7 @@
 			files = (
 				8EDF85272AA1BEFD00334D6E /* ContentView.swift in Sources */,
 				8EDF85252AA1BEFD00334D6E /* MyCreativeCameraApp.swift in Sources */,
+				8EDF856B2AA1EA8300334D6E /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +237,7 @@
 			files = (
 				8EDF85612AA1C7EE00334D6E /* main.swift in Sources */,
 				8EDF855F2AA1C7EE00334D6E /* ExtensionProvider.swift in Sources */,
+				8EDF856C2AA1EA8300334D6E /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
