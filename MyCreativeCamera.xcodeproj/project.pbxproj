@@ -11,7 +11,34 @@
 		8EDF85272AA1BEFD00334D6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85262AA1BEFD00334D6E /* ContentView.swift */; };
 		8EDF85292AA1BEFF00334D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDF85282AA1BEFF00334D6E /* Assets.xcassets */; };
 		8EDF852C2AA1BEFF00334D6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDF852B2AA1BEFF00334D6E /* Preview Assets.xcassets */; };
+		8EDF855F2AA1C7EE00334D6E /* ExtensionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF855E2AA1C7EE00334D6E /* ExtensionProvider.swift */; };
+		8EDF85612AA1C7EE00334D6E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85602AA1C7EE00334D6E /* main.swift */; };
+		8EDF85662AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 8EDF855C2AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EDF85642AA1C7EE00334D6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EDF85192AA1BEFD00334D6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EDF855B2AA1C7EE00334D6E;
+			remoteInfo = Extension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8EDF85422AA1C74000334D6E /* Embed System Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				8EDF85662AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension in Embed System Extensions */,
+			);
+			name = "Embed System Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8EDF85212AA1BEFD00334D6E /* MyCreativeCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCreativeCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,10 +47,22 @@
 		8EDF85282AA1BEFF00334D6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EDF852B2AA1BEFF00334D6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8EDF852D2AA1BEFF00334D6E /* MyCreativeCamera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyCreativeCamera.entitlements; sourceTree = "<group>"; };
+		8EDF855C2AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDF855E2AA1C7EE00334D6E /* ExtensionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionProvider.swift; sourceTree = "<group>"; };
+		8EDF85602AA1C7EE00334D6E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8EDF85622AA1C7EE00334D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EDF85632AA1C7EE00334D6E /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8EDF851E2AA1BEFD00334D6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDF85592AA1C7EE00334D6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8EDF85232AA1BEFD00334D6E /* MyCreativeCamera */,
+				8EDF855D2AA1C7EE00334D6E /* Extension */,
 				8EDF85222AA1BEFD00334D6E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				8EDF85212AA1BEFD00334D6E /* MyCreativeCamera.app */,
+				8EDF855C2AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +110,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8EDF855D2AA1C7EE00334D6E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EDF855E2AA1C7EE00334D6E /* ExtensionProvider.swift */,
+				8EDF85602AA1C7EE00334D6E /* main.swift */,
+				8EDF85622AA1C7EE00334D6E /* Info.plist */,
+				8EDF85632AA1C7EE00334D6E /* Extension.entitlements */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +131,34 @@
 				8EDF851D2AA1BEFD00334D6E /* Sources */,
 				8EDF851E2AA1BEFD00334D6E /* Frameworks */,
 				8EDF851F2AA1BEFD00334D6E /* Resources */,
+				8EDF85422AA1C74000334D6E /* Embed System Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8EDF85652AA1C7EE00334D6E /* PBXTargetDependency */,
 			);
 			name = MyCreativeCamera;
 			productName = MyCreativeCamera;
 			productReference = 8EDF85212AA1BEFD00334D6E /* MyCreativeCamera.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8EDF855B2AA1C7EE00334D6E /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EDF85672AA1C7EE00334D6E /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				8EDF85582AA1C7EE00334D6E /* Sources */,
+				8EDF85592AA1C7EE00334D6E /* Frameworks */,
+				8EDF855A2AA1C7EE00334D6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = 8EDF855C2AA1C7EE00334D6E /* tokyo.shmdevelopment.MyCreativeCamera.Extension.systemextension */;
+			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +171,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					8EDF85202AA1BEFD00334D6E = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					8EDF855B2AA1C7EE00334D6E = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -118,6 +192,7 @@
 			projectRoot = "";
 			targets = (
 				8EDF85202AA1BEFD00334D6E /* MyCreativeCamera */,
+				8EDF855B2AA1C7EE00334D6E /* Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +204,13 @@
 			files = (
 				8EDF852C2AA1BEFF00334D6E /* Preview Assets.xcassets in Resources */,
 				8EDF85292AA1BEFF00334D6E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDF855A2AA1C7EE00334D6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +226,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EDF85582AA1C7EE00334D6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EDF85612AA1C7EE00334D6E /* main.swift in Sources */,
+				8EDF855F2AA1C7EE00334D6E /* ExtensionProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EDF85652AA1C7EE00334D6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EDF855B2AA1C7EE00334D6E /* Extension */;
+			targetProxy = 8EDF85642AA1C7EE00334D6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8EDF852E2AA1BEFF00334D6E /* Debug */ = {
@@ -268,6 +367,7 @@
 		8EDF85312AA1BEFF00334D6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MyCreativeCamera/MyCreativeCamera.entitlements;
@@ -296,6 +396,7 @@
 		8EDF85322AA1BEFF00334D6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MyCreativeCamera/MyCreativeCamera.entitlements;
@@ -321,6 +422,58 @@
 			};
 			name = Release;
 		};
+		8EDF85682AA1C7EE00334D6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 247V527KAQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tokyo.shmdevelopment.MyCreativeCamera.Extension;
+				PRODUCT_NAME = "$(inherited)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8EDF85692AA1C7EE00334D6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 247V527KAQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tokyo.shmdevelopment.MyCreativeCamera.Extension;
+				PRODUCT_NAME = "$(inherited)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +491,15 @@
 			buildConfigurations = (
 				8EDF85312AA1BEFF00334D6E /* Debug */,
 				8EDF85322AA1BEFF00334D6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EDF85672AA1C7EE00334D6E /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EDF85682AA1C7EE00334D6E /* Debug */,
+				8EDF85692AA1C7EE00334D6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
