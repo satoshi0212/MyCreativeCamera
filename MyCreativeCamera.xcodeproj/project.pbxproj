@@ -13,6 +13,7 @@
 		8E7173C32AA1F9FA00223341 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C12AA1F9FA00223341 /* Constants.swift */; };
 		8E7173C52AA1FA6F00223341 /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */; };
 		8E7173C62AA1FA6F00223341 /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */; };
+		8E7173CA2AA20CCD00223341 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7173C92AA20CCD00223341 /* SpeechRecognizer.swift */; };
 		8EDF85252AA1BEFD00334D6E /* MyCreativeCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85242AA1BEFD00334D6E /* MyCreativeCameraApp.swift */; };
 		8EDF85272AA1BEFD00334D6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF85262AA1BEFD00334D6E /* ContentView.swift */; };
 		8EDF85292AA1BEFF00334D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDF85282AA1BEFF00334D6E /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		8E7173C12AA1F9FA00223341 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E7173C42AA1FA6F00223341 /* Defaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Keys.swift"; sourceTree = "<group>"; };
+		8E7173C92AA20CCD00223341 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		8EDF85212AA1BEFD00334D6E /* MyCreativeCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCreativeCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDF85242AA1BEFD00334D6E /* MyCreativeCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCreativeCameraApp.swift; sourceTree = "<group>"; };
 		8EDF85262AA1BEFD00334D6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				8EDF85242AA1BEFD00334D6E /* MyCreativeCameraApp.swift */,
 				8EDF85262AA1BEFD00334D6E /* ContentView.swift */,
+				8E7173C92AA20CCD00223341 /* SpeechRecognizer.swift */,
 				8EDF85282AA1BEFF00334D6E /* Assets.xcassets */,
 				8EDF852D2AA1BEFF00334D6E /* MyCreativeCamera.entitlements */,
 				8EDF852A2AA1BEFF00334D6E /* Preview Content */,
@@ -259,6 +262,7 @@
 				8EDF85252AA1BEFD00334D6E /* MyCreativeCameraApp.swift in Sources */,
 				8EDF856B2AA1EA8300334D6E /* Utility.swift in Sources */,
 				8E7173C22AA1F9FA00223341 /* Constants.swift in Sources */,
+				8E7173CA2AA20CCD00223341 /* SpeechRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +423,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -448,6 +454,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
